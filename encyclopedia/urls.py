@@ -5,5 +5,5 @@ app_name = "wiki"
 
 urlpatterns = [
     path("", views.index, name="index"),
-    path("wiki/<str:oarticle>",views.oarticle, name="oarticle")
+    path("<str:oarticle>",views.oarticle, name="oarticle")
 ]
