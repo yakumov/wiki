@@ -12,6 +12,7 @@ def index(request):
 
 def oarticle(request, entry):
     content = util.get_entry(entry)
+    print(f"request={content}")
     result = markdown2.Markdown(content)
     return render(request, "encyclopedia/oarticle.html", {
         "title": entry,
