@@ -10,10 +10,10 @@ def index(request):
         "entries": util.list_entries()
     })
 
-def oarticle(request, entries):
-    content = util.get_entry(entries)
+def oarticle(request, entry):
+    content = util.get_entry(entry)
     result = markdown2.Markdown(content)
     return render(request, "encyclopedia/oarticle.html", {
-        "title": entries,
+        "title": entry,
         "content": result
     })
