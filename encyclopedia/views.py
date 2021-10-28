@@ -14,8 +14,6 @@ def oarticle(request, entry):
     content = util.get_entry(entry)
     md2 = markdown2.Markdown()
     result = md2.convert(content)
-#    result = markdown2.Markdown(util.get_entry(entry))
-    print(f"request={result}")
     return render(request, "encyclopedia/oarticle.html", {
         "title": entry,
         "content": result
