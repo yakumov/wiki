@@ -8,5 +8,5 @@ from . import views
 
 urlpatterns = [
     path("", views.index, name="index"),
-    path("wiki/css",views.oarticle, name="oarticle")
+    path("css",views.oarticle, name="oarticle")
 ]
