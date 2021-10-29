@@ -1,0 +1,27 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block nav %}
+
+<h1>Знайдено за запитом</h1>
+<ul>
+    {% for entry in context %}
+        <li><a href="{% url 'oarticle' entry %}">{{ entry }}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}
+
+{% block body %}
+
+    <ul>
+        {% for entry in context %}
+            <li><a href="{% url 'oarticle' entry %}">{{ entry }}</a></li>
+        {% endfor %}
+    </ul>
+    <h1>{{ non }}</h1>
+
+
+{% endblock %}
