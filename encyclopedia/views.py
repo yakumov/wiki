@@ -26,18 +26,17 @@ def search(request):
         set_list = []
 #        list_search_low.clear()
         for text in all_list:
-#            list_search_low.append(text.lower())
-            if get_form['q'].lower() != '' and get_form['q'].lower() in text.lower():
+            list_search_low.append(text.lower())
+        if get_form['q'].lower() != '' and get_form['q'].lower() in list_search_low:
                 return HttpResponseRedirect(f"/wiki/{get_form['q']}")
-            else:
-                for text in all_list:
+        else:
+            for text in all_list:
                 if text.lower().find(get_form['q']) != -1:
                     set_list.append(text)
-                context = {
-                       "title": str("Пошук невдалий"),
-                       "non": set_list
-                       }
-                return render(request, "encyclopedia/search.html", context = context)
+            context = {
+                "non": set_list
+            }
+            return render(request, "encyclopedia/search.html", context = context)
 
     else:
         return render(request, "encyclopedia/oarticle.html")
