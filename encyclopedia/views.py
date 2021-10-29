@@ -23,11 +23,11 @@ def search(request):
     if request.method == "POST":
         get_form = request.POST
         all_list = util.list_entries()
-#        list_search = []
+        list_search_low = []
         for text in all_list:
-            list_search_low.append(text.lower())
-            if get_form['q'].lover() != '' and get_form['q'].lover() in list_search_low:
-                return HttpResponseRedirect(f"/wiki/{get_form['q']}")
+#            list_search_low.append(text.lower())
+            if get_form['q'].lower() != '' and get_form['q'].lower() in text.lower():
+                return HttpResponseRedirect(f"/wiki/{get_form['q'].lower()}")
 #            else:
 #                return render(request, "encyclopedia/index.html")
 
