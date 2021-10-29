@@ -27,7 +27,8 @@ def search(request):
         print(f"all_list = {all_list}")
         list_search = []
         for text in all_list:
-            print(f"all_list = {all_list}")
+            list = get_form.lover()
+            print(f"list = {list}")
             print(f"text = {text}")
             print(f"get_form.lover() = {get_form.lover()}")
             if get_form.lover() != '' and get_form.lover() in text.lover():
