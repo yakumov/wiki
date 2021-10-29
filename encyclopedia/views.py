@@ -34,6 +34,6 @@ def search(request):
                 if text.lower().find(get_form['q']) != -1:
                     set_list.append(text)
             context = {
-                "non": set_list
+                "entries": set_list
             }
             return render(request, "encyclopedia/search.html", context = context)

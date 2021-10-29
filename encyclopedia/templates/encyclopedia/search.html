@@ -1,21 +1,16 @@
 {% extends "encyclopedia/layout.html" %}
 
 {% block title %}
-    {{ title }}
-{% endblock %}
-
-{% block nav %}
-
+    Енциклопедія
 {% endblock %}
 
 {% block body %}
-<h1>Знайдено за запитом</h1>
+    <h1>Знайдені сторінки за запитом</h1>
+
     <ul>
-        {% for entry in context %}
-            <li><a href="{% url 'oarticle' entry %}">{{ non }}</a></li>
+        {% for entry in entries %}
+             <li><a href="/wiki/{{entry|safe}}">{{ entry }}</a></li>
         {% endfor %}
     </ul>
-    <h1>{{ non }}</h1>
-
 
 {% endblock %}
