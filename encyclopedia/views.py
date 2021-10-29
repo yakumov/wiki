@@ -31,7 +31,7 @@ def search(request):
                 return HttpResponseRedirect(f"/wiki/{get_form['q']}")
             else:
                 for text in all_list:
-                if text.lower().find(form['q']) != -1:
+                if text.lower().find(get_form['q']) != -1:
                     set_list.append(text)
                 context = {
                        "title": str("Пошук невдалий"),
