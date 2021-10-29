@@ -23,7 +23,6 @@ def search(request):
     if request.method == "POST":
         get_form = request.POST
         all_list = util.list_entries()
-        all_list_l.lover() = util.list_entries()
         list_search = []
         for text in all_list:
             if get_form.lover() != '' and get_form.lover() in text.lover():
