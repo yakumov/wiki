@@ -37,6 +37,3 @@ def search(request):
                 "non": set_list
             }
             return render(request, "encyclopedia/search.html", context = context)
-
-    else:
-        return render(request, "encyclopedia/oarticle.html")
