@@ -22,18 +22,13 @@ def oarticle(request, entry):
 def search(request):
     if request.method == "POST":
         get_form = request.POST
-        print(f"get_form = {get_form}")
         all_list = util.list_entries()
-        print(f"get_form['q'] = {get_form['q']}")
         list_search = []
-
         for text in all_list:
-            print(f"text = {text}")
             if get_form['q'] != '' and get_form['q'] in text:
-#                list_search.append(text)
                 return HttpResponseRedirect(f"/wiki/{get_form['q']}")
-            else:
-                return render(request, "encyclopedia/oarticle.html")
+#            else:
+#                return render(request, "encyclopedia/index.html")
 
 
 
