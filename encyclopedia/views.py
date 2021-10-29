@@ -20,4 +20,17 @@ def oarticle(request, entry):
     })
 
 def search(request):
-    return render(request, "encyclopedia/oarticle.html")
+    if request.method == "POST":
+        get_form = request.POST
+        all_list = util.list_entries()
+        list_search = []
+        for text in all_list:
+            if get_form != '' and get_form in text:
+                list_search.append(text)
+            else:
+                return render(request, "encyclopedia/oarticle.html")
+
+
+
+    else:
+        return render(request, "encyclopedia/oarticle.html")
