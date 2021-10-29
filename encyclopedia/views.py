@@ -37,8 +37,8 @@ def search(request):
                 "entries": set_list
             }
             return render(request, "encyclopedia/search.html", context = context)
-            else:
-                if not set_list:
+            
+            if not set_list:
                     context = {
                        "non": str("Такої статті не знайдено")
                        }
