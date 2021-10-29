@@ -22,7 +22,9 @@ def oarticle(request, entry):
 def search(request):
     if request.method == "POST":
         get_form = request.POST
+        print(f"get_form = {get_form}")
         all_list = util.list_entries()
+        print(f"all_list = {all_list}")
         list_search = []
         for text in all_list:
             if get_form.lover() != '' and get_form.lover() in text.lover():
