@@ -23,9 +23,10 @@ def search(request):
     if request.method == "POST":
         get_form = request.POST
         all_list = util.list_entries()
+        all_list_l.lover() = util.list_entries()
         list_search = []
         for text in all_list:
-            if get_form['q'].lover() != '' and get_form['q'].lover() in text:
+            if get_form.lover() != '' and get_form.lover() in text.lover():
                 list_search.append(text)
             else:
                 return render(request, "encyclopedia/oarticle.html")
