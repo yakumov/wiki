@@ -31,6 +31,7 @@ def search(request):
             print(f"text = {text}")
             if get_form['q'] != '' and get_form['q'] in text:
                 list_search.append(text)
+                print(f"list_search = {list_search}")
             else:
                 return render(request, "encyclopedia/oarticle.html")
 
