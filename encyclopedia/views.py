@@ -31,7 +31,7 @@ def search(request):
             print(f"text = {text}")
             if get_form['q'] != '' and get_form['q'] in text:
 #                list_search.append(text)
-                return HttpResponseRedirect(f"/wiki/{form['q']}")
+                return HttpResponseRedirect(f"/wiki/{get_form['q']}")
             else:
                 return render(request, "encyclopedia/oarticle.html")
 
