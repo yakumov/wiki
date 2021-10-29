@@ -27,7 +27,7 @@ def search(request):
         for text in all_list:
 #            list_search_low.append(text.lower())
             if get_form['q'].lower() != '' and get_form['q'].lower() in text.lower():
-                return HttpResponseRedirect(f"wiki/<str:{get_form['q']}>")
+                return HttpResponseRedirect(f"/wiki/{<str:get_form['q']>}")
             else:
                 context = {
                        "title": str("Пошук невдалий"),
