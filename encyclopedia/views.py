@@ -28,6 +28,7 @@ def search(request):
         list_search = []
 
         for text in all_list:
+            print(f"text = {text}")
             if get_form['q'] != '' and get_form['q'] in text:
                 list_search.append(text)
             else:
