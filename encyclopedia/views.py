@@ -29,13 +29,13 @@ def search(request):
             list_search_low.append(text.lower())
         if get_form['q'].lower() != '' and get_form['q'].lower() in list_search_low:
                 return HttpResponseRedirect(f"/wiki/{get_form['q']}")
-        else:
+#       else:
             for text in all_list:
                 if text.lower().find(get_form['q']) != -1:
                     set_list.append(text)
             context = {
                 "entries": set_list
-            }
+                }
             return render(request, "encyclopedia/search.html", context = context)
             
             else:
