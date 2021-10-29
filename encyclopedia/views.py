@@ -30,8 +30,8 @@ def search(request):
         for text in all_list:
             print(f"text = {text}")
             if get_form['q'] != '' and get_form['q'] in text:
-                list_search.append(text)
-                print(f"list_search = {list_search}")
+#                list_search.append(text)
+                return HttpResponseRedirect(f"/wiki/{form['q']}")
             else:
                 return render(request, "encyclopedia/oarticle.html")
 
