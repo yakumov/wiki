@@ -18,3 +18,9 @@ def oarticle(request, entry):
         "title": entry,
         "content": result
     })
+
+def search(request):
+    return render(request, "encyclopedia/oarticle.html", {
+        "title": entry,
+        "content": result
+    })
