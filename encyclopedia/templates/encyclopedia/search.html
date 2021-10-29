@@ -5,9 +5,10 @@
 {% endblock %}
 
 {% block body %}
-    <h1>Знайдені сторінки за запитом</h1>
-    <h1>{{ non }}</h1>
-
+    <h1>Cторінки за запитом</h1>
+    {% for non in non %}
+        <h1>{{ non }}</h1>
+    {% endfor %}
 
     <ul>
         {% for entry in entries %}
