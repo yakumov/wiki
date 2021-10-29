@@ -24,7 +24,7 @@ def search(request):
         get_form = request.POST
         all_list = util.list_entries()
         set_list = []
-#        list_search_low.clear()
+        list_search_low.clear()
         for text in all_list:
             list_search_low.append(text.lower())
         if get_form['q'].lower() != '' and get_form['q'].lower() in list_search_low:
