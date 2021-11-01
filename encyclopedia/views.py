@@ -5,6 +5,8 @@ from django import forms
 
 from . import util
 import markdown2
+import random
+
 
 class NewArticleForms( forms.Form) :
     article = forms.CharField(label="Найменування статті",widget=forms.TextInput(attrs={'class': 'form-control'}))
@@ -92,3 +94,8 @@ def saveedit(request):
             content = form.cleaned_data["content"]
             util.save_entry(article, content)
             return HttpResponseRedirect(f"/wiki/{oarticle}")
+
+def random(request):
+    pages =  util.list_entries()
+    rand = random.choice(pages)
+    return HttpResponseRedirect(f"/wiki/{rand}")
