@@ -44,5 +44,5 @@ def search(request):
                     })
                 elif not set_list:
                     return render(request, "encyclopedia/search.html", {
-                    "non": str("Такої статті не знайдено")
+                    "non": str("Відсутні")
                     })
