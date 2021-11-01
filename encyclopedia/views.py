@@ -34,11 +34,15 @@ def search(request):
             for text in all_list:
                 if text.lower().find(get_form['q']) != -1:
                     set_list.append(text)
+                else:
+                    return render(request, "encyclopedia/search.html", {
+                        "non": str("Такої статті не знайдено")
+                        })
 
             return render(request, "encyclopedia/search.html", {
                 "entries": set_list
                 })
-        if not set_list:
-            return render(request, "encyclopedia/search.html", {
-                "non": str("Такої статті не знайдено")
-                })
+#        if not set_list:
+#            return render(request, "encyclopedia/search.html", {
+#                "non": str("Такої статті не знайдено")
+#                })
