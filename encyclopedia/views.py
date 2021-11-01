@@ -5,7 +5,7 @@ from django import forms
 
 from . import util
 import markdown2
-from random import *
+import random
 
 
 class NewArticleForms( forms.Form) :
