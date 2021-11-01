@@ -19,6 +19,7 @@ def oarticle(request, entry):
         "content": result
     })
 
+
 def search(request):
     if request.method == "POST":
         get_form = request.POST
@@ -27,7 +28,6 @@ def search(request):
         list_search_low = []
         for text in all_list:
             list_search_low.append(text.lower())
-
         if get_form['q'].lower() in list_search_low:
             return HttpResponseRedirect(f"/wiki/{get_form['q']}")
         else:
@@ -35,11 +35,10 @@ def search(request):
                 if text.lower().find(get_form['q']) != -1:
                     set_list.append(text)
 
-                if not set_list:
-                    return render(request, "encyclopedia/search.html", {
-                        "non": str("Такої статті не знайдено")
-                        })
-                else:
-                    return render(request, "encyclopedia/search.html", {
-                        "entries": set_list
-                        })
+            return render(request, "encyclopedia/search.html", {
+                "entries": set_list
+                })
+        if not set_list:
+            return render(request, "encyclopedia/search.html", {
+                "non": str("Такої статті не знайдено")
+                })
