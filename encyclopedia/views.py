@@ -38,17 +38,21 @@ def search(request):
 #                    return render(request, "encyclopedia/search.html", {
 #                        "non": str("Такої статті не знайдено")
 #                        })
-
- #           return render(request, "encyclopedia/search.html", {
- #               "entries": set_list
- #               })
-
-            return render(request, "encyclopedia/search.html", {
                 if not set_list:
-                    "entries": set_list
+                    return render(request, "encyclopedia/search.html", {
+                    "non": str("Такої статті не знайдено")
+                    })
                 else:
-                    "entries": str("Такої статті не знайдено")
-                })
+                    return render(request, "encyclopedia/search.html", {
+                    "entries": set_list
+                    })
+
+#            return render(request, "encyclopedia/search.html", {
+#                if not set_list:
+#                    "entries": set_list
+#                else:
+#                    "entries": str("Такої статті не знайдено")
+#                })
 
 #        if not set_list:
 #            return render(request, "encyclopedia/search.html", {
