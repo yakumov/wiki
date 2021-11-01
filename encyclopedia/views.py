@@ -42,4 +42,7 @@ def search(request):
                     return render(request, "encyclopedia/search.html", {
                     "entries": set_list
                     })
-
+                else:
+                    return render(request, "encyclopedia/search.html", {
+                    "non": str("Такої статті не знайдено")
+                    })
