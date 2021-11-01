@@ -35,7 +35,7 @@ def search(request):
                 if text.lower().find(get_form['q']) != -1:
                     set_list.append(text)
                     print(f"set_list_1={set_list}")
-
+endif
                 if not set_list:
                     print(f"set_list_non={set_list}")
                     return render(request, "encyclopedia/search.html", {
