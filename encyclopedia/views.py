@@ -98,5 +98,5 @@ def saveedit(request):
 
 def random(request):
     seq =  util.list_entries()
-    rand = random.choice(seq)
+    rand = choice(seq)
     return HttpResponseRedirect(f"/wiki/{rand}")
