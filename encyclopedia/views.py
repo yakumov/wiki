@@ -5,7 +5,7 @@ from django import forms
 
 from . import util
 import markdown2
-import random
+from random import *
 
 
 class NewArticleForms( forms.Form) :
@@ -98,5 +98,5 @@ def saveedit(request):
 
 def random(request):
     seq =  util.list_entries()
-    rand = choice(seq)
+    rand = random.choice(seq)
     return HttpResponseRedirect(f"/wiki/{rand}")
