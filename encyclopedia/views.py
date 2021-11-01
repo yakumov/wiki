@@ -39,10 +39,12 @@ def search(request):
 #                        "non": str("Такої статті не знайдено")
 #                        })
                 if not set_list:
+                    print(f"set_list_non={set_list}")
                     return render(request, "encyclopedia/search.html", {
                     "non": str("Такої статті не знайдено")
                     })
                 else:
+                    print(f"set_list_={set_list}")
                     return render(request, "encyclopedia/search.html", {
                     "entries": set_list
                     })
