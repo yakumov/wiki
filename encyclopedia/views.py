@@ -42,7 +42,8 @@ def search(request):
                     return render(request, "encyclopedia/search.html", {
                     "entries": set_list
                     })
-                elif not set_list:
-                    return render(request, "encyclopedia/search.html", {
-                    "non": str("Відсутні")
-                    })
+#                elif not set_list:
+#                    return render(request, "encyclopedia/search.html", {
+#                    "non": str("Відсутні")
+#                    })
+
