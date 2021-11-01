@@ -75,3 +75,20 @@ def add(request):
         return render(request, "encyclopedia/add.html", {
             "form": NewArticleForms()
             })
+
+def edit(request, name):
+    content = util.get_entry(name)
+    return render(request, "encyclopedia/edit.html", {
+            "form": NewArticleForms({'article':name,'content':content}),
+            "title_page":name
+                })
+
+
+def saveedit(request):
+    if request.method == "POST":
+        form = NewArticleForms(request.POST)
+        if form.is_valid() :
+            article = form.cleaned_data["article"]
+            content = form.cleaned_data["content"]
+            util.save_entry(article, content)
+            return HttpResponseRedirect(f"/wiki/{oarticle}")
