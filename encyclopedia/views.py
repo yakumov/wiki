@@ -36,7 +36,7 @@ def search(request):
                     set_list.append(text)
 #            if not set_list:
 #                    return render(request, "encyclopedia/search.html", {
-#                    "non": str("Такої статті не знайдено")
+#                    "non": str("Відсутні")
 #                    })
 #            else:
                     return render(request, "encyclopedia/search.html", {
